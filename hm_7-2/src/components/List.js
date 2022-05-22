@@ -13,12 +13,12 @@ function List(props) {
         switch (item.type) {
             case 'video':
                 return (
-                   item.views>100? <Popular ><Video {...item} /></Popular>: <New><Video {...item} /></New>
+                   item.views>1000? <Popular ><Video {...item} /></Popular>: item.views<100? <New><Video {...item} /></New>: <Video {...item} />
                 );
 
             case 'article':
                 return (
-                    item.views>100? <Popular ><Article {...item} /></Popular>: <New><Article {...item} /></New>
+                    item.views>1000? <Popular ><Article {...item} /></Popular>: item.views<100? <New><Article {...item} /></New>: <Article {...item} />
                 );
         }
     });
